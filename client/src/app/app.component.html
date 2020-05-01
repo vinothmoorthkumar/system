@@ -1,5 +1,6 @@
 <div class="main-div">
-  <mat-card class="content_card">
+  <div *ngIf="thankyou" class='tnk'>Thank you</div>
+  <mat-card *ngIf="!thankyou" class="content_card">
     <mat-card-header>
       <mat-card-title>Diagnostic System</mat-card-title>
     </mat-card-header>
@@ -7,11 +8,6 @@
       <div *ngFor="let item of chat;" [ngClass]="{'darker' : item.type=='bot'}" class="container">
         <span [ngClass]="{'time-left' : item.type=='bot', 'time-right' : item.type=='user'}">{{item.message}}</span>
       </div>
-
-      <!-- <div class="container">
-        <span class="time-right">11:00</span>
-      </div> -->
-
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" *ngFor="let answer of currentQuestion.answer;" (click)="check(answer)" >{{answer}}</button>

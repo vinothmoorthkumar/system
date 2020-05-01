@@ -25,6 +25,9 @@ body {
     padding: 0 20px;
   }
   
+.tnk {
+    font-size: 50px;
+}
   .container {
     border: 2px solid #dedede;
     background-color: #f1f1f1;
