@@ -11,3 +11,5 @@
 1. Run `ng build`
 
 1. Run `npm start`
+
+Your app should now be running on [https://localhost:8080/](https://localhost:8080/).
