@@ -9,6 +9,9 @@ const options = {
 
 const app = express();
 const port = 8080
+
+app.use('/static', express.static('public'))
+
 app.use((req, res) => {
   res.writeHead(200);
   res.end("hello world\n");

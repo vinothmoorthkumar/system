@@ -60,7 +60,7 @@ body {
   
   .time-right {
     float: right;
-    color: #aaa;
+    color: rgba(0,0,0,.87);
   }
   
   .time-left {

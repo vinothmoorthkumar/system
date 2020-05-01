@@ -4,17 +4,17 @@
       <mat-card-title>Diagnostic System</mat-card-title>
     </mat-card-header>
     <mat-card-content class="message_cnt">
-      <div class="container darker">
-        <span class="time-left">I've been asked to make sure your system is ready for a system diagnostics.</span>
+      <div *ngFor="let item of chat;" [ngClass]="{'darker' : item.type=='bot'}" class="container">
+        <span [ngClass]="{'time-left' : item.type=='bot', 'time-right' : item.type=='user'}">{{item.message}}</span>
       </div>
 
-      <div class="container">
+      <!-- <div class="container">
         <span class="time-right">11:00</span>
-      </div>
+      </div> -->
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="primary" *ngFor="let answer of currentQuestion.answer;" (click)="check(answer)" >{{answer}}</button>
     </mat-card-actions>
   </mat-card>
 </div>
