@@ -13,7 +13,7 @@ const port = 8080
 
 app.use('/static', express.static('public'))
 
-app.use('/', express.static(path.join(__dirname, 'client/dist/client')));
+app.use('/', express.static(path.join(__dirname, 'dist/client')));
 
 https.createServer(options, app).listen(port);
 console.log('app running in '+port)
