@@ -1,6 +1,7 @@
 const https = require("https"),
   fs = require("fs");
 const express = require('express');
+const path= require('path');
 
 const options = {
   key: fs.readFileSync("./ssl/ssl.key"),
@@ -12,10 +13,7 @@ const port = 8080
 
 app.use('/static', express.static('public'))
 
-app.use((req, res) => {
-  res.writeHead(200);
-  res.end("hello world\n");
-});
+app.use('/', express.static(path.join(__dirname, 'client/dist/client')));
 
 https.createServer(options, app).listen(port);
 console.log('app running in '+port)
